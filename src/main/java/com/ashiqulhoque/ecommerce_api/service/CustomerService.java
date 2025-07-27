@@ -9,6 +9,7 @@ public class CustomerService {
     // just an empty service
 
     public Wishlist getWishListByCustomerId(Long customerId) {
-        return null;
+        // placeholder method
+        return new Wishlist();
     }
 }
