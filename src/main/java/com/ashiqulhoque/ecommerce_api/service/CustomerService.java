@@ -6,8 +6,6 @@ import org.springframework.stereotype.Service;
 @Service
 public class CustomerService {
 
-    // just an empty service
-
     public Wishlist getWishListByCustomerId(Long customerId) {
         // placeholder method
         return new Wishlist();
