@@ -1,0 +1,54 @@
+databaseChangeLog:
+  - changeSet:
+      id: 4
+      author: ashiqul
+      changes:
+        - insert:
+            tableName: customer
+            columns:
+              - column: { name: name, value: John Doe }
+              - column: { name: email, value: john@example.com }
+
+        - insert:
+            tableName: customer
+            columns:
+              - column: { name: name, value: Alice Smith }
+              - column: { name: email, value: alice@example.com }
+
+  - changeSet:
+      id: 5
+      author: ashiqul
+      changes:
+        - insert:
+            tableName: item
+            columns:
+              - column: { name: name, value: Samsung TV }
+              - column: { name: price, value: "599.99" }
+
+        - insert:
+            tableName: item
+            columns:
+              - column: { name: name, value: Logitech Mouse }
+              - column: { name: price, value: "29.99" }
+
+  - changeSet:
+      id: 6
+      author: ashiqul
+      changes:
+        - insert:
+            tableName: sale
+            columns:
+              - column: { name: customer_id, valueNumeric: "1" }
+              - column: { name: item_id, valueNumeric: "1" }
+              - column: { name: quantity, valueNumeric: "2" }
+              - column: { name: total_price, valueNumeric: "1199.98" }
+              - column: { name: created_at, valueDate: 2025-07-25T14:00:00 }
+
+        - insert:
+            tableName: sale
+            columns:
+              - column: { name: customer_id, valueNumeric: "2" }
+              - column: { name: item_id, valueNumeric: "2" }
+              - column: { name: quantity, valueNumeric: "1" }
+              - column: { name: total_price, valueNumeric: "29.99" }
+              - column: { name: created_at, valueDate: 2025-07-24T09:00:00 }
