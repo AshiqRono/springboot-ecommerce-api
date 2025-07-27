@@ -1,54 +1,278 @@
 databaseChangeLog:
   - changeSet:
-      id: 4
-      author: ashiqul
+      id: 7
+      author: system
       changes:
         - insert:
             tableName: customer
             columns:
-              - column: { name: name, value: John Doe }
-              - column: { name: email, value: john@example.com }
+              - column: { name: first_name, value: "Christopher" }
+              - column: { name: last_name, value: "Nolan" }
+              - column: { name: email, value: "nolan@example.com" }
 
         - insert:
             tableName: customer
             columns:
-              - column: { name: name, value: Alice Smith }
-              - column: { name: email, value: alice@example.com }
+              - column: { name: first_name, value: "Douglas" }
+              - column: { name: last_name, value: "Liman" }
+              - column: { name: email, value: "liman@example.com" }
+
+        - insert:
+            tableName: customer
+            columns:
+              - column: { name: first_name, value: "Steven" }
+              - column: { name: last_name, value: "Spielberg" }
+              - column: { name: email, value: "berg@example.com" }
+
+        - insert:
+            tableName: customer
+            columns:
+              - column: { name: first_name, value: "James" }
+              - column: { name: last_name, value: "Cameron" }
+              - column: { name: email, value: "cameron@example.com" }
+
+        - insert:
+            tableName: customer
+            columns:
+              - column: { name: first_name, value: "Michael" }
+              - column: { name: last_name, value: "Bay" }
+              - column: { name: email, value: "bay@example.com" }
 
   - changeSet:
-      id: 5
-      author: ashiqul
+      id: 8
+      author: system
       changes:
         - insert:
-            tableName: item
+            tableName: product
             columns:
-              - column: { name: name, value: Samsung TV }
+              - column: { name: name, value: "Samsung TV" }
+              - column: { name: description, value: "Latest electronic display marvel from Samsung industries" }
               - column: { name: price, value: "599.99" }
 
         - insert:
-            tableName: item
+            tableName: product
             columns:
-              - column: { name: name, value: Logitech Mouse }
+              - column: { name: name, value: "Logitech Mouse" }
+              - column: { name: description, value: "Wireless, easy to use, lightweight, bluetooth 4.0" }
               - column: { name: price, value: "29.99" }
 
-  - changeSet:
-      id: 6
-      author: ashiqul
-      changes:
         - insert:
-            tableName: sale
+            tableName: product
             columns:
-              - column: { name: customer_id, valueNumeric: "1" }
-              - column: { name: item_id, valueNumeric: "1" }
-              - column: { name: quantity, valueNumeric: "2" }
-              - column: { name: total_price, valueNumeric: "1199.98" }
-              - column: { name: created_at, valueDate: 2025-07-25T14:00:00 }
+              - column: { name: name, value: "Logitech Headphone" }
+              - column: { name: description, value: "Wireless, easy to use, lightweight, bluetooth 4.0" }
+              - column: { name: price, value: "49.99" }
 
         - insert:
-            tableName: sale
+            tableName: product
             columns:
-              - column: { name: customer_id, valueNumeric: "2" }
-              - column: { name: item_id, valueNumeric: "2" }
+              - column: { name: name, value: "Apple Mouse" }
+              - column: { name: description, value: "Wireless, easy to use, lightweight, bluetooth 4.0" }
+              - column: { name: price, value: "59.99" }
+
+        - insert:
+            tableName: product
+            columns:
+              - column: { name: name, value: "Apple i-pods" }
+              - column: { name: description, value: "Wireless, easy to use, lightweight, bluetooth 4.0" }
+              - column: { name: price, value: "99.99" }
+
+        - insert:
+            tableName: product
+            columns:
+              - column: { name: name, value: "Apple Watch" }
+              - column: { name: description, value: "Wireless, easy to use, lightweight, bluetooth 4.0" }
+              - column: { name: price, value: "299.99" }
+
+        - insert:
+            tableName: product
+            columns:
+              - column: { name: name, value: "Panasonic Beard Trimmer" }
+              - column: { name: description, value: "Long battery life, waterproof, long lasting blades" }
+              - column: { name: price, value: "399.99" }
+
+        - insert:
+            tableName: product
+            columns:
+              - column: { name: name, value: "ORBIT Gaming Headset" }
+              - column: { name: description, value: "Wireless, easy to use, lightweight, bluetooth 4.0" }
+              - column: { name: price, value: "199.99" }
+
+        - insert:
+            tableName: product
+            columns:
+              - column: { name: name, value: "DJI Mavic Mini-Drone" }
+              - column: { name: description, value: "Lightweight Design, High-Quality Aerial Photography" }
+              - column: { name: price, value: "399.99" }
+
+        - insert:
+            tableName: product
+            columns:
+              - column: { name: name, value: "PlayStation 5 Console" }
+              - column: { name: description, value: "Stunning Games with breath taking emersion." }
+              - column: { name: price, value: "499.99" }
+
+  - changeSet:
+      id: 9
+      author: system
+      changes:
+        - insert:
+            tableName: wishlist
+            columns:
+              - column: { name: cust_id, valueNumeric: "1" }
+              - column: { name: product_ids, value: "{2, 3}" }
+              - column: { name: created_date, valueDate: "2025-07-25T14:00:00" }
+
+        - insert:
+            tableName: wishlist
+            columns:
+              - column: { name: cust_id, valueNumeric: "3" }
+              - column: { name: product_ids, value: "{4, 5, 6}" }
+              - column: { name: created_date, valueDate: "2025-07-25T14:00:00" }
+
+        - insert:
+            tableName: wishlist
+            columns:
+              - column: { name: cust_id, valueNumeric: "5" }
+              - column: { name: product_ids, value: "{2, 8}" }
+              - column: { name: created_date, valueDate: "2025-07-25T14:00:00" }
+
+  - changeSet:
+      id: 10
+      author: system
+      changes:
+        - insert:
+            tableName: orders
+            columns:
+              - column: { name: cust_id, valueNumeric: "1" }
+              - column: { name: product_ids, value: "{9, 10}" }
+              - column: { name: order_status, value: "DELIVERED" }
+              - column: { name: total_amount, valueNumeric: "899.98" }
+              - column: { name: order_placed_at, valueDate: "2025-06-26T14:00:00" }
+              - column: { name: order_delivered_at, valueDate: "2025-06-28T14:00:00" }
+
+        - insert:
+            tableName: orders
+            columns:
+              - column: { name: cust_id, valueNumeric: "2" }
+              - column: { name: product_ids, value: "{5, 6}" }
+              - column: { name: order_status, value: "DELIVERED" }
+              - column: { name: total_amount, valueNumeric: "499.97" }
+              - column: { name: order_placed_at, valueDate: "2025-06-20T14:00:00" }
+              - column: { name: order_delivered_at, valueDate: "2025-06-23T14:00:00" }
+
+  - changeSet:
+      id: 11
+      author: system
+      changes:
+        - insert:
+            tableName: productwise_order_history
+            columns:
+              - column: { name: order_id, valueNumeric: "1" }
+              - column: { name: product_id, valueNumeric: "9" }
+              - column: { name: unit_price, valueNumeric: "399.99" }
               - column: { name: quantity, valueNumeric: "1" }
-              - column: { name: total_price, valueNumeric: "29.99" }
-              - column: { name: created_at, valueDate: 2025-07-24T09:00:00 }
+              - column: { name: total_price, valueNumeric: "399.99" }
+              - column: { name: order_status, value: "DELIVERED" }
+              - column: { name: order_placed_at, valueDate: "2025-06-26T14:00:00" }
+              - column: { name: order_delivered_at, valueDate: "2025-06-28T14:00:00" }
+
+        - insert:
+            tableName: productwise_order_history
+            columns:
+              - column: { name: order_id, valueNumeric: "1" }
+              - column: { name: product_id, valueNumeric: "10" }
+              - column: { name: unit_price, valueNumeric: "499.99" }
+              - column: { name: quantity, valueNumeric: "1" }
+              - column: { name: total_price, valueNumeric: "499.99" }
+              - column: { name: order_status, value: "DELIVERED" }
+              - column: { name: order_placed_at, valueDate: "2025-06-26T14:00:00" }
+              - column: { name: order_delivered_at, valueDate: "2025-06-28T14:00:00" }
+
+        - insert:
+            tableName: productwise_order_history
+            columns:
+              - column: { name: order_id, valueNumeric: "2" }
+              - column: { name: product_id, valueNumeric: "5" }
+              - column: { name: unit_price, valueNumeric: "99.99" }
+              - column: { name: quantity, valueNumeric: "2" }
+              - column: { name: total_price, valueNumeric: "199.99" }
+              - column: { name: order_status, value: "DELIVERED" }
+              - column: { name: order_placed_at, valueDate: "2025-06-26T14:00:00" }
+              - column: { name: order_delivered_at, valueDate: "2025-06-28T14:00:00" }
+
+        - insert:
+            tableName: productwise_order_history
+            columns:
+              - column: { name: order_id, valueNumeric: "2" }
+              - column: { name: product_id, valueNumeric: "6" }
+              - column: { name: unit_price, valueNumeric: "299.99" }
+              - column: { name: quantity, valueNumeric: "1" }
+              - column: { name: total_price, valueNumeric: "299.99" }
+              - column: { name: order_status, value: "DELIVERED" }
+              - column: { name: order_placed_at, valueDate: "2025-06-26T14:00:00" }
+              - column: { name: order_delivered_at, valueDate: "2025-06-28T14:00:00" }
+
+  - changeSet:
+      id: 12
+      author: system
+      changes:
+        - insert:
+            tableName: product_stock
+            columns:
+              - column: { name: product_id, valueNumeric: "1" }
+              - column: { name: stock, valueNumeric: "9" }
+
+        - insert:
+            tableName: product_stock
+            columns:
+              - column: { name: product_id, valueNumeric: "2" }
+              - column: { name: stock, valueNumeric: "19" }
+
+        - insert:
+            tableName: product_stock
+            columns:
+              - column: { name: product_id, valueNumeric: "3" }
+              - column: { name: stock, valueNumeric: "19" }
+
+        - insert:
+            tableName: product_stock
+            columns:
+              - column: { name: product_id, valueNumeric: "4" }
+              - column: { name: stock, valueNumeric: "9" }
+
+        - insert:
+            tableName: product_stock
+            columns:
+              - column: { name: product_id, valueNumeric: "5" }
+              - column: { name: stock, valueNumeric: "9" }
+
+        - insert:
+            tableName: product_stock
+            columns:
+              - column: { name: product_id, valueNumeric: "6" }
+              - column: { name: stock, valueNumeric: "9" }
+
+        - insert:
+            tableName: product_stock
+            columns:
+              - column: { name: product_id, valueNumeric: "7" }
+              - column: { name: stock, valueNumeric: "19" }
+
+        - insert:
+            tableName: product_stock
+            columns:
+              - column: { name: product_id, valueNumeric: "8" }
+              - column: { name: stock, valueNumeric: "5" }
+
+        - insert:
+            tableName: product_stock
+            columns:
+              - column: { name: product_id, valueNumeric: "9" }
+              - column: { name: stock, valueNumeric: "4" }
+
+        - insert:
+            tableName: product_stock
+            columns:
+              - column: { name: product_id, valueNumeric: "10" }
+              - column: { name: stock, valueNumeric: "6" }

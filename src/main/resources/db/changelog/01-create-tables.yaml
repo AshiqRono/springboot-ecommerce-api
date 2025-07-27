@@ -1,7 +1,7 @@
 databaseChangeLog:
   - changeSet:
       id: 1
-      author: ashiqul
+      author: system
       changes:
         - createTable:
             tableName: customer
@@ -13,18 +13,36 @@ databaseChangeLog:
                   constraints:
                     primaryKey: true
               - column:
-                  name: name
+                  name: first_name
+                  type: VARCHAR(100)
+              - column:
+                  name: last_name
                   type: VARCHAR(100)
               - column:
                   name: email
                   type: VARCHAR(150)
+              - column:
+                  name: created_date
+                  type: TIMESTAMP
+              - column:
+                  name: created_by
+                  type: VARCHAR(100)
+              - column:
+                  name: retired_date
+                  type: TIMESTAMP
+              - column:
+                  name: last_modified_date
+                  type: TIMESTAMP
+              - column:
+                  name: last_modified_by
+                  type: VARCHAR(100)
 
   - changeSet:
       id: 2
-      author: ashiqul
+      author: system
       changes:
         - createTable:
-            tableName: item
+            tableName: product
             columns:
               - column:
                   name: id
@@ -36,15 +54,33 @@ databaseChangeLog:
                   name: name
                   type: VARCHAR(100)
               - column:
+                  name: description
+                  type: VARCHAR(200)
+              - column:
                   name: price
                   type: DECIMAL(10,2)
+              - column:
+                  name: created_date
+                  type: TIMESTAMP
+              - column:
+                  name: created_by
+                  type: VARCHAR(100)
+              - column:
+                  name: retired_date
+                  type: TIMESTAMP
+              - column:
+                  name: last_modified_date
+                  type: TIMESTAMP
+              - column:
+                  name: last_modified_by
+                  type: VARCHAR(100)
 
   - changeSet:
       id: 3
-      author: ashiqul
+      author: system
       changes:
         - createTable:
-            tableName: sale
+            tableName: wishlist
             columns:
               - column:
                   name: id
@@ -53,11 +89,99 @@ databaseChangeLog:
                   constraints:
                     primaryKey: true
               - column:
-                  name: customer_id
+                  name: cust_id
                   type: BIGINT
               - column:
-                  name: item_id
+                  name: product_ids
+                  type: INTEGER[]
+              - column:
+                  name: created_date
+                  type: TIMESTAMP
+              - column:
+                  name: created_by
+                  type: VARCHAR(100)
+              - column:
+                  name: retired_date
+                  type: TIMESTAMP
+              - column:
+                  name: last_modified_date
+                  type: TIMESTAMP
+              - column:
+                  name: last_modified_by
+                  type: VARCHAR(100)
+
+  - changeSet:
+      id: 4
+      author: system
+      changes:
+        - createTable:
+            tableName: orders
+            columns:
+              - column:
+                  name: id
                   type: BIGINT
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+              - column:
+                  name: cust_id
+                  type: BIGINT
+              - column:
+                  name: product_ids
+                  type: INTEGER[]
+              - column:
+                  name: total_amount
+                  type: DECIMAL(10,2)
+              - column:
+                  name: order_status
+                  type: VARCHAR(50)
+              - column:
+                  name: order_placed_at
+                  type: TIMESTAMP
+              - column:
+                  name: order_delivered_at
+                  type: TIMESTAMP
+              - column:
+                  name: order_cancelled_at
+                  type: TIMESTAMP
+              - column:
+                  name: created_date
+                  type: TIMESTAMP
+              - column:
+                  name: created_by
+                  type: VARCHAR(100)
+              - column:
+                  name: retired_date
+                  type: TIMESTAMP
+              - column:
+                  name: last_modified_date
+                  type: TIMESTAMP
+              - column:
+                  name: last_modified_by
+                  type: VARCHAR(100)
+
+  - changeSet:
+      id: 5
+      author: system
+      changes:
+        - createTable:
+            tableName: productwise_order_history
+            columns:
+              - column:
+                  name: id
+                  type: BIGINT
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+              - column:
+                  name: order_id
+                  type: BIGINT
+              - column:
+                  name: product_id
+                  type: BIGINT
+              - column:
+                  name: unit_price
+                  type: DECIMAL(10,2)
               - column:
                   name: quantity
                   type: INT
@@ -65,5 +189,67 @@ databaseChangeLog:
                   name: total_price
                   type: DECIMAL(10,2)
               - column:
-                  name: created_at
+                  name: order_status
+                  type: VARCHAR(50)
+              - column:
+                  name: order_placed_at
                   type: TIMESTAMP
+              - column:
+                  name: order_delivered_at
+                  type: TIMESTAMP
+              - column:
+                  name: created_date
+                  type: TIMESTAMP
+              - column:
+                  name: created_by
+                  type: VARCHAR(100)
+              - column:
+                  name: retired_date
+                  type: TIMESTAMP
+              - column:
+                  name: last_modified_date
+                  type: TIMESTAMP
+              - column:
+                  name: last_modified_by
+                  type: VARCHAR(100)
+
+  - changeSet:
+      id: 6
+      author: system
+      changes:
+        - createTable:
+            tableName: product_stock
+            columns:
+              - column:
+                  name: id
+                  type: BIGINT
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+              - column:
+                  name: product_id
+                  type: BIGINT
+              - column:
+                  name: stock
+                  type: INT
+              - column:
+                  name: stock_added
+                  type: TIMESTAMP
+              - column:
+                  name: stock_removed
+                  type: TIMESTAMP
+              - column:
+                  name: created_date
+                  type: TIMESTAMP
+              - column:
+                  name: created_by
+                  type: VARCHAR(100)
+              - column:
+                  name: retired_date
+                  type: TIMESTAMP
+              - column:
+                  name: last_modified_date
+                  type: TIMESTAMP
+              - column:
+                  name: last_modified_by
+                  type: VARCHAR(100)
