@@ -7,7 +7,7 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import java.math.BigDecimal;
-import java.time.LocalDateTime;
+import java.time.LocalDate;
 import java.util.Set;
 
 @Entity
@@ -35,11 +35,11 @@ public class Orders extends AbstractRetirableEntity {
     private OrderStatus orderStatus;
 
     @Column(name = "order_placed_at")
-    private LocalDateTime orderPlacedAt;
+    private LocalDate orderPlacedAt;
 
     @Column(name = "order_delivered_at")
-    private LocalDateTime orderDeliveredAt;
+    private LocalDate orderDeliveredAt;
 
     @Column(name = "order_cancelled_at")
-    private LocalDateTime orderCancelledAt;
+    private LocalDate orderCancelledAt;
 }
