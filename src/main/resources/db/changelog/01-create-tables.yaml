@@ -180,6 +180,9 @@ databaseChangeLog:
                   name: product_id
                   type: BIGINT
               - column:
+                  name: product_name
+                  type: VARCHAR(100)
+              - column:
                   name: unit_price
                   type: DECIMAL(10,2)
               - column:

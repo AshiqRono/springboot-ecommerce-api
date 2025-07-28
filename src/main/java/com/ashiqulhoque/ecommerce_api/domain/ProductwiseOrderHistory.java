@@ -26,6 +26,9 @@ public class ProductwiseOrderHistory extends AbstractAuditingEntity{
     @Column(name = "product_id")
     private Long productId;
 
+    @Column(name = "product_name", length = 100, nullable = false)
+    private String productName;
+
     @Column(name = "unit_price", precision = 10, scale = 4)
     private BigDecimal unitPrice;
 

@@ -82,7 +82,7 @@ databaseChangeLog:
             columns:
               - column: { name: name, value: "Apple Watch" }
               - column: { name: description, value: "Wireless, easy to use, lightweight, bluetooth 4.0" }
-              - column: { name: price, value: "299.99" }
+              - column: { name: price, value: "159.99" }
 
         - insert:
             tableName: product
@@ -170,6 +170,7 @@ databaseChangeLog:
             columns:
               - column: { name: order_id, valueNumeric: "1" }
               - column: { name: product_id, valueNumeric: "9" }
+              - column: { name: product_name, value: "DJI Mavic Mini-Drone" }
               - column: { name: unit_price, valueNumeric: "399.99" }
               - column: { name: quantity, valueNumeric: "1" }
               - column: { name: total_price, valueNumeric: "399.99" }
@@ -182,6 +183,7 @@ databaseChangeLog:
             columns:
               - column: { name: order_id, valueNumeric: "1" }
               - column: { name: product_id, valueNumeric: "10" }
+              - column: { name: product_name, value: "PlayStation 5 Console" }
               - column: { name: unit_price, valueNumeric: "499.99" }
               - column: { name: quantity, valueNumeric: "1" }
               - column: { name: total_price, valueNumeric: "499.99" }
@@ -194,9 +196,10 @@ databaseChangeLog:
             columns:
               - column: { name: order_id, valueNumeric: "2" }
               - column: { name: product_id, valueNumeric: "5" }
+              - column: { name: product_name, value: "Apple i-pods" }
               - column: { name: unit_price, valueNumeric: "99.99" }
-              - column: { name: quantity, valueNumeric: "2" }
-              - column: { name: total_price, valueNumeric: "199.99" }
+              - column: { name: quantity, valueNumeric: "3" }
+              - column: { name: total_price, valueNumeric: "299.97" }
               - column: { name: order_status, value: "DELIVERED" }
               - column: { name: order_placed_at, valueDate: "2025-06-26T14:00:00" }
               - column: { name: order_delivered_at, valueDate: "2025-06-28T14:00:00" }
@@ -206,9 +209,10 @@ databaseChangeLog:
             columns:
               - column: { name: order_id, valueNumeric: "2" }
               - column: { name: product_id, valueNumeric: "6" }
-              - column: { name: unit_price, valueNumeric: "299.99" }
-              - column: { name: quantity, valueNumeric: "1" }
-              - column: { name: total_price, valueNumeric: "299.99" }
+              - column: { name: product_name, value: "Apple Watch" }
+              - column: { name: unit_price, valueNumeric: "159.99" }
+              - column: { name: quantity, valueNumeric: "2" }
+              - column: { name: total_price, valueNumeric: "319.98" }
               - column: { name: order_status, value: "DELIVERED" }
               - column: { name: order_placed_at, valueDate: "2025-06-26T14:00:00" }
               - column: { name: order_delivered_at, valueDate: "2025-06-28T14:00:00" }
