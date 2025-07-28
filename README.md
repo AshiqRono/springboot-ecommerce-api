@@ -1,6 +1,6 @@
 ## E-Commerce API
 
-A Spring Boot 3.2.2 REST API for managing customers, products, orders, wishlists, and sales history.
+A Spring Boot 3.2.2 REST API project for managing customers, products, orders, wishlists, and sales history.
 This project uses PostgreSQL, Liquibase, Docker, and Swagger for API documentation.
 
 #### REST API with Spring Boot 3.2.2 
