@@ -1,8 +1,9 @@
 package com.ashiqulhoque.ecommerce_api.controller;
 
-import com.ashiqulhoque.ecommerce_api.domain.Wishlist;
+import com.ashiqulhoque.ecommerce_api.dto.WishlistDTO;
 import com.ashiqulhoque.ecommerce_api.service.CustomerService;
-import org.springframework.http.HttpStatusCode;
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -11,6 +12,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping("/api/customer")
+@Tag(name = "Customer APIs", description = "Endpoints for managing customers")
 public class CustomerController {
 
     private final CustomerService customerService;
@@ -24,9 +26,10 @@ public class CustomerController {
      * @param cust_id
      * @return
      */
+    @Operation(summary = "Get customer wishlist by customer id", description = "Fetch the entire wishlist of a single customer")
     @GetMapping(value = "/wishlist/{cust_id}")
-    public ResponseEntity<Wishlist> getCustomerWishList(@PathVariable("cust_id") Long cust_id) {
-        // placeholder api
-        return new ResponseEntity<>(HttpStatusCode.valueOf(200));
+    public ResponseEntity<WishlistDTO> getCustomerWishList(@PathVariable("cust_id") Long cust_id) {
+        WishlistDTO wishlistDTO = customerService.getWishListByCustomerId(cust_id);
+        return ResponseEntity.ok(wishlistDTO);
     }
 }

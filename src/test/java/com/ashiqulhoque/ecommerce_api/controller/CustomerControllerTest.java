@@ -1,6 +1,7 @@
 package com.ashiqulhoque.ecommerce_api.controller;
 
 import com.ashiqulhoque.ecommerce_api.domain.Wishlist;
+import com.ashiqulhoque.ecommerce_api.dto.WishlistDTO;
 import com.ashiqulhoque.ecommerce_api.service.CustomerService;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -28,10 +29,7 @@ public class CustomerControllerTest {
 
     @Test
     public void testGetCustomerWishListByCustomerId() throws Exception {
-        Wishlist mockWishList = new Wishlist();
-        mockWishList.setId(1l);
-        mockWishList.setCustId(1l);
-        mockWishList.setProductIds(Set.of(2l, 3l));
+        WishlistDTO mockWishList = new WishlistDTO();
 
         when(customerService.getWishListByCustomerId(1l)).thenReturn(mockWishList);
 

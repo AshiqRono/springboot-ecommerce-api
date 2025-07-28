@@ -1,5 +1,6 @@
 package com.ashiqulhoque.ecommerce_api.domain;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.MappedSuperclass;
 import lombok.Getter;
 import lombok.Setter;
@@ -11,5 +12,6 @@ import java.time.LocalDateTime;
 @MappedSuperclass
 public abstract class AbstractRetirableEntity extends AbstractAuditingEntity{
 
-    protected LocalDateTime retired_date = null;
+    @Column(name = "retired_date")
+    protected LocalDateTime retiredDate = null;
 }
