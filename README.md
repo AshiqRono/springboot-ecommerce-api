@@ -28,6 +28,12 @@ The ports are mapped as follows(host:container) :
 #### Swagger will be available here:http://localhost:8080/swagger-ui.html
 #### PostgreSQL will run: localhost:5432
 
+### APIs exposed
+#### /api/customer/wishlist/{cust_id}
+#### /api/product/topSelling
+#### /api/product/mostSelling
+#### /api/sales/totalSaleOfTheDay
+#### /api/sales/maxSaleDay?start=date&end=date
 
 
 
