@@ -24,7 +24,12 @@ public class SalesService {
 
         List<Object[]> results = orderRepository.findTotalSaleOfTheDay(start);
 
-        Object[ ] result = results.get(0);
+        if (results.isEmpty()) {
+            log.info("No sale data on {}", startDate);
+            return new SaleSummaryDTO(LocalDate.now().toString(), BigDecimal.ZERO);
+        }
+
+        Object[] result = results.get(0);
 
         return new SaleSummaryDTO(result[0].toString(), (BigDecimal) result[1]);
     }
